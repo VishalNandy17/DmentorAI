@@ -452,10 +452,10 @@ A: Copilot suggests code. DMentor *reviews* your code proactively and teaches yo
 
 We're open source! Contributions welcome:
 
-- 🐛 [Report bugs](https://github.com/yourusername/dmentor-ai/issues)
-- 💡 [Suggest features](https://github.com/yourusername/dmentor-ai/discussions)
-- 🔧 [Submit PRs](https://github.com/yourusername/dmentor-ai/pulls)
-- 📖 [Improve docs](https://github.com/yourusername/dmentor-ai/wiki)
+- 🐛 [Report bugs](https://github.com/vishalnandy17/dmentorai/issues)
+- 💡 [Suggest features](https://github.com/vishalnandy17/dmentorai/discussions)
+- 🔧 [Submit PRs](https://github.com/vishalnandy17/dmentorai/pulls)
+- 📖 [Improve docs](https://github.com/vishalnandy17/dmentorai/wiki)
 
 Check our [Contributing Guide](CONTRIBUTING.md) to get started!
 
@@ -469,20 +469,10 @@ MIT License - see [LICENSE](LICENSE) for details
 
 ## 🙏 Acknowledgments
 
-- Built with ❤️ by developers who wished they had a mentor
+- Built with ❤️ by Vishal who wished he had a mentor
 - Powered by state-of-the-art AI models
 - Inspired by the pair programming culture
 - Special thanks to our amazing beta testers
-
----
-
-## 📞 Support & Community
-
-- 📚 **Documentation**: [docs.dmentor.ai](https://docs.dmentor.ai)
-- 💬 **Discord**: [Join our community](https://discord.gg/dmentor)
-- 🐦 **Twitter**: [@DMentorAI](https://twitter.com/dmentorai)
-- 📧 **Email**: support@dmentor.ai
-- 🎥 **YouTube**: [Video tutorials](https://youtube.com/@dmentorai)
 
 ---
 
@@ -492,7 +482,7 @@ MIT License - see [LICENSE](LICENSE) for details
 
 **Made by developers, for developers**
 
-[⭐ Star on GitHub](https://github.com/yourusername/dmentor-ai) | [🚀 Get Started](#-getting-started) | [💬 Join Discord](https://discord.gg/dmentor)
+[⭐ Star on GitHub](https://github.com/vishalnandy17/dmentorai) | 
 
 ---
 
