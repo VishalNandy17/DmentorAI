@@ -1,4 +1,4 @@
-# 👻 DMentor AI
+# DMentor AI
 
 <div align="center">
 
