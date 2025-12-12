@@ -2,8 +2,12 @@
   "name": "dmentor-ai",
   "displayName": "DMentor AI",
   "description": "Your Proactive AI Pair Programmer with Personality",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "publisher": "dmentor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VishalNandy17/DmentorAI.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -213,22 +217,38 @@
           "properties": {
             "security": {
               "type": "string",
-              "enum": ["strict", "balanced", "relaxed"],
+              "enum": [
+                "strict",
+                "balanced",
+                "relaxed"
+              ],
               "default": "strict"
             },
             "performance": {
               "type": "string",
-              "enum": ["strict", "balanced", "relaxed"],
+              "enum": [
+                "strict",
+                "balanced",
+                "relaxed"
+              ],
               "default": "balanced"
             },
             "style": {
               "type": "string",
-              "enum": ["strict", "balanced", "relaxed"],
+              "enum": [
+                "strict",
+                "balanced",
+                "relaxed"
+              ],
               "default": "balanced"
             },
             "accessibility": {
               "type": "string",
-              "enum": ["strict", "balanced", "relaxed"],
+              "enum": [
+                "strict",
+                "balanced",
+                "relaxed"
+              ],
               "default": "strict"
             }
           },
@@ -258,6 +278,7 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
+    "package": "vsce package --yarn false",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "lint": "eslint src --ext ts",
@@ -285,4 +306,3 @@
     "@anthropic-ai/sdk": "^0.20.0"
   }
 }
-
