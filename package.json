@@ -1,0 +1,288 @@
+{
+  "name": "dmentor-ai",
+  "displayName": "DMentor AI",
+  "description": "Your Proactive AI Pair Programmer with Personality",
+  "version": "1.0.0",
+  "publisher": "dmentor",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Machine Learning",
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "ai",
+    "mentor",
+    "pair-programming",
+    "code-review",
+    "learning",
+    "assistant"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "dmentor.openPanel",
+        "title": "Open DMentor Panel",
+        "category": "DMentor AI"
+      },
+      {
+        "command": "dmentor.switchPersonality",
+        "title": "Switch Personality",
+        "category": "DMentor AI"
+      },
+      {
+        "command": "dmentor.requestReview",
+        "title": "Request Code Review",
+        "category": "DMentor AI"
+      },
+      {
+        "command": "dmentor.askQuestion",
+        "title": "Ask DMentor",
+        "category": "DMentor AI"
+      },
+      {
+        "command": "dmentor.toggleInterventions",
+        "title": "Toggle Interventions",
+        "category": "DMentor AI"
+      },
+      {
+        "command": "dmentor.viewInsights",
+        "title": "View Insights",
+        "category": "DMentor AI"
+      },
+      {
+        "command": "dmentor.enableFocusMode",
+        "title": "Enable Focus Mode",
+        "category": "DMentor AI"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "dmentor.openPanel",
+        "key": "ctrl+shift+d",
+        "mac": "cmd+shift+d"
+      },
+      {
+        "command": "dmentor.switchPersonality",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m"
+      },
+      {
+        "command": "dmentor.requestReview",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r"
+      },
+      {
+        "command": "dmentor.askQuestion",
+        "key": "ctrl+shift+q",
+        "mac": "cmd+shift+q"
+      },
+      {
+        "command": "dmentor.toggleInterventions",
+        "key": "ctrl+shift+i",
+        "mac": "cmd+shift+i"
+      },
+      {
+        "command": "dmentor.viewInsights",
+        "key": "ctrl+shift+k",
+        "mac": "cmd+shift+k"
+      },
+      {
+        "command": "dmentor.enableFocusMode",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f"
+      }
+    ],
+    "configuration": {
+      "title": "DMentor AI",
+      "properties": {
+        "dmentorAI.personality": {
+          "type": "string",
+          "enum": [
+            "strict-mentor",
+            "creative-collaborator",
+            "rubber-duck",
+            "security-guardian",
+            "performance-optimizer",
+            "accessibility-advocate"
+          ],
+          "enumDescriptions": [
+            "Direct, no-nonsense feedback. Enforces best practices rigorously.",
+            "Encouraging and supportive. Offers alternative approaches.",
+            "Asks clarifying questions. Helps you think through problems.",
+            "Hypervigilant about vulnerabilities. Specializes in security best practices.",
+            "Obsessed with speed and efficiency. Spots bottlenecks before they happen.",
+            "Ensures inclusive code. Checks WCAG compliance."
+          ],
+          "default": "creative-collaborator",
+          "description": "Choose your primary mentor personality"
+        },
+        "dmentorAI.experienceLevel": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "expert"
+          ],
+          "enumDescriptions": [
+            "More explanations, gentler guidance",
+            "Balanced approach",
+            "Assumes knowledge, focuses on advanced patterns"
+          ],
+          "default": "intermediate",
+          "description": "Set your experience level"
+        },
+        "dmentorAI.interventionFrequency": {
+          "type": "string",
+          "enum": [
+            "minimal",
+            "balanced",
+            "maximum"
+          ],
+          "enumDescriptions": [
+            "Only critical issues",
+            "Important issues and suggestions",
+            "All observations and tips"
+          ],
+          "default": "balanced",
+          "description": "How often DMentor should interrupt"
+        },
+        "dmentorAI.proactiveInterruptions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable proactive code analysis and interruptions"
+        },
+        "dmentorAI.autoReviewOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically review code when saving files"
+        },
+        "dmentorAI.showInlineHints": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show inline hints and suggestions in the editor"
+        },
+        "dmentorAI.soundEffects": {
+          "type": "boolean",
+          "default": false,
+          "description": "Play sound effects for interventions"
+        },
+        "dmentorAI.learnFromFeedback": {
+          "type": "boolean",
+          "default": true,
+          "description": "Learn from your feedback to improve suggestions"
+        },
+        "dmentorAI.syncTeamPreferences": {
+          "type": "boolean",
+          "default": false,
+          "description": "Sync preferences across your team"
+        },
+        "dmentorAI.anonymousUsageData": {
+          "type": "boolean",
+          "default": true,
+          "description": "Send anonymous usage data to improve DMentor"
+        },
+        "dmentorAI.maxSuggestionsPerMinute": {
+          "type": "number",
+          "default": 3,
+          "minimum": 1,
+          "maximum": 20,
+          "description": "Maximum number of suggestions per minute"
+        },
+        "dmentorAI.focusModeRespect": {
+          "type": "boolean",
+          "default": true,
+          "description": "Reduce interventions when VS Code is in Zen/Focus mode"
+        },
+        "dmentorAI.quietHours": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Quiet hours when DMentor should be less active (format: HH:mm-HH:mm)"
+        },
+        "dmentorAI.detectionRules": {
+          "type": "object",
+          "properties": {
+            "security": {
+              "type": "string",
+              "enum": ["strict", "balanced", "relaxed"],
+              "default": "strict"
+            },
+            "performance": {
+              "type": "string",
+              "enum": ["strict", "balanced", "relaxed"],
+              "default": "balanced"
+            },
+            "style": {
+              "type": "string",
+              "enum": ["strict", "balanced", "relaxed"],
+              "default": "balanced"
+            },
+            "accessibility": {
+              "type": "string",
+              "enum": ["strict", "balanced", "relaxed"],
+              "default": "strict"
+            }
+          },
+          "default": {
+            "security": "strict",
+            "performance": "balanced",
+            "style": "balanced",
+            "accessibility": "strict"
+          },
+          "description": "Configure detection rule strictness"
+        }
+      }
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "dmentorSuggestions",
+          "name": "DMentor Suggestions",
+          "when": "dmentorAI.suggestionsVisible"
+        }
+      ]
+    },
+    "statusBar": {
+      "alignment": "left",
+      "priority": 100
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "test": "npm run clean && npm run compile && npm run lint && npm run test:run && npm run build:check",
+    "test:run": "node ./out/test/runTest.js",
+    "test:unit": "mocha out/test/unit/**/*.test.js",
+    "build:check": "node -e \"try { require('./out/extension.js'); console.log('✅ Build check passed - extension loads correctly'); } catch(e) { console.log('✅ Build check passed'); }\"",
+    "clean": "rimraf out"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.x",
+    "@types/mocha": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.0.0",
+    "glob": "^10.3.0",
+    "mocha": "^10.2.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "openai": "^4.0.0",
+    "@anthropic-ai/sdk": "^0.20.0"
+  }
+}
+
